@@ -982,17 +982,19 @@ async function unlockResults() {
 
   // Send to Formspree
   try {
-    await fetch('https://formspree.io/f/xaqkepyl', {
+    // Add to Brevo List 3 (Professional subscribers) via Supabase Edge Function
+    const supabaseUrl = 'https://edqsobgvltyvoycnafdz.supabase.co/functions/v1/add-to-brevo';
+    await fetch(supabaseUrl, {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name, email, role,
-        quiz_result: results[resultType].name,
-        source: 'behavior-style-quiz'
-      }),
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        email: email,
+        firstName: name,
+        listId: 3
+      })
     });
   } catch(e) {
-    console.log('Form submission error:', e);
+    console.log('Brevo submission error:', e);
   }
 
   showResults(resultType, name);
