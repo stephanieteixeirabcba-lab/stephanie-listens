@@ -424,20 +424,19 @@ async function unlockResults() {
   const r = results[resultType];
 
   try {
-    await fetch('https://formspree.io/f/xaqkepyl', {
+    // Add to Brevo List 4 (Parent subscribers) via Supabase Edge Function
+    // NOTE: Replace 4 with your actual parent list ID from Brevo
+    const supabaseUrl = 'https://edqsobgvltyvoycnafdz.supabase.co/functions/v1/add-to-brevo';
+    await fetch(supabaseUrl, {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: name,
         email: email,
-        quiz: 'parent-quiz',
-        result_type: r.name,
-        signature_phrase: r.phrase,
-        source: 'parent-behavior-quiz',
-        tag: 'parent-audience'
-      }),
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        firstName: name,
+        listId: 7
+      })
     });
-  } catch(e) { console.log('Form error:', e); }
+  } catch(e) { console.log('Brevo submission error:', e); }
 
   showResults(resultType, name);
 }
