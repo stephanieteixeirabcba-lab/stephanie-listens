@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Your Behavior Style? | Stephanie Listens</title>
+<meta name="description" content="Discover how you naturally respond to challenging behavior — and what it reveals about how you connect. Free quiz from BCBA + IBA Stephanie Listens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4704B'/%3E%3Ctext x='50' y='65' font-family='Georgia,serif' font-size='50' font-style='italic' fill='white' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --terra: #D4704B;
+  --terra-dark: #B25D3D;
+  --terra-light: #FAEDE5;
+  --peri: #9FA8DA;
+  --peri-dark: #7B85C0;
+  --peri-light: #ECEEF7;
+  --cream: #F5F1E8;
+  --brown: #5C4033;
+  --brown-light: #6B3A22;
+  --white: #FFFFFF;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--brown);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  background: var(--cream);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgba(212,112,75,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--brown-light);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+.nav-logo span { color: var(--peri); }
+.nav-back {
+  font-size: 13px;
+  color: var(--terra);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* QUIZ WRAPPER */
+.quiz-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* INTRO SCREEN */
+.intro-screen { text-align: center; animation: fadeUp 0.6s ease; }
+
+.intro-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--peri);
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 6px 16px;
+  background: rgba(159,168,218,0.12);
+  border-radius: 20px;
+}
+
+.intro-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--brown);
+  margin-bottom: 20px;
+}
+.intro-title em { color: var(--terra); font-style: italic; }
+
+.intro-subtitle {
+  font-size: 17px;
+  color: var(--brown-light);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--terra);
+  font-weight: 500;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--brown-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.75;
+}
+
+.start-btn {
+  background: var(--terra);
+  color: var(--white);
+  border: none;
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(212,112,75,0.3);
+  letter-spacing: 0.3px;
+}
+.start-btn:hover {
+  background: var(--terra-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(212,112,75,0.4);
+}
+
+.intro-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--brown-light);
+  opacity: 0.6;
+}
+
+/* QUESTION SCREEN */
+.question-screen { animation: fadeUp 0.4s ease; }
+
+.progress-bar-wrapper {
+  margin-bottom: 36px;
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.progress-label {
+  font-size: 12px;
+  color: var(--brown-light);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.progress-count {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--terra);
+  font-style: italic;
+}
+.progress-track {
+  height: 4px;
+  background: rgba(212,112,75,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--terra);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.question-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 40px;
+  border: 0.5px solid rgba(212,112,75,0.15);
+  box-shadow: 0 4px 24px rgba(92,64,51,0.06);
+  margin-bottom: 20px;
+}
+
+.question-num {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--terra);
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.question-text {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--brown);
+  margin-bottom: 32px;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--cream);
+  border: 1.5px solid rgba(212,112,75,0.15);
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--brown);
+  text-align: left;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.option-btn:hover {
+  border-color: var(--terra);
+  background: var(--terra-light);
+  transform: translateX(4px);
+}
+.option-btn.selected {
+  border-color: var(--terra);
+  background: var(--terra-light);
+  box-shadow: 0 0 0 3px rgba(212,112,75,0.15);
+}
+.option-letter {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid rgba(212,112,75,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--terra);
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.2s ease;
+}
+.option-btn.selected .option-letter {
+  background: var(--terra);
+  color: var(--white);
+  border-color: var(--terra);
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-btn {
+  background: none;
+  border: 1px solid rgba(212,112,75,0.3);
+  color: var(--brown-light);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--sans);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.back-btn:hover { border-color: var(--terra); color: var(--terra); }
+.back-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.next-btn {
+  background: var(--terra);
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.next-btn.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.next-btn.active:hover {
+  background: var(--terra-dark);
+  transform: translateY(-1px);
+}
+
+/* EMAIL GATE */
+.email-gate { animation: fadeUp 0.5s ease; text-align: center; }
+
+.gate-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--terra-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 28px;
+}
+
+.gate-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--brown);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.gate-title em { color: var(--terra); font-style: italic; }
+
+.gate-subtitle {
+  font-size: 16px;
+  color: var(--brown-light);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  opacity: 0.9;
+}
+
+.gate-form {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px;
+  border: 0.5px solid rgba(159,168,218,0.3);
+  box-shadow: 0 4px 24px rgba(92,64,51,0.06);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.gate-field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+.gate-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brown);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.gate-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(159,168,218,0.4);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--brown);
+  font-family: var(--sans);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.gate-field input:focus {
+  border-color: var(--peri);
+  box-shadow: 0 0 0 3px rgba(159,168,218,0.15);
+  background: var(--white);
+}
+.gate-field input::placeholder { color: rgba(92,64,51,0.35); }
+
+.unlock-btn {
+  width: 100%;
+  background: var(--terra);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(212,112,75,0.25);
+}
+.unlock-btn:hover {
+  background: var(--terra-dark);
+  transform: translateY(-1px);
+}
+.gate-disclaimer {
+  font-size: 12px;
+  color: var(--brown-light);
+  opacity: 0.55;
+  margin-top: 12px;
+}
+
+/* RESULTS */
+.results-screen { animation: fadeUp 0.5s ease; }
+
+.result-hero {
+  text-align: center;
+  padding: 40px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.result-hero.fixer { background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%); }
+.result-hero.connector { background: linear-gradient(135deg, var(--peri) 0%, var(--peri-dark) 100%); }
+.result-hero.analyzer { background: linear-gradient(135deg, #7B85C0 0%, #5C6AA0 100%); }
+.result-hero.nurturer { background: linear-gradient(135deg, var(--brown) 0%, #3D2519 100%); }
+
+.result-type-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  margin-bottom: 12px;
+  display: block;
+}
+.result-type-name {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.result-type-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+}
+
+.result-body {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 36px;
+  border: 0.5px solid rgba(212,112,75,0.15);
+  box-shadow: 0 4px 24px rgba(92,64,51,0.06);
+  margin-bottom: 20px;
+}
+
+.result-section-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--terra);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.result-desc {
+  font-size: 16px;
+  color: var(--brown);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.result-strengths {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.result-strengths li {
+  padding: 10px 0;
+  padding-left: 28px;
+  position: relative;
+  font-size: 15px;
+  color: var(--brown);
+  line-height: 1.5;
+  border-bottom: 0.5px solid rgba(212,112,75,0.1);
+}
+.result-strengths li:last-child { border-bottom: none; }
+.result-strengths li::before {
+  content: '♡';
+  position: absolute;
+  left: 0;
+  color: var(--terra);
+  font-size: 13px;
+}
+
+.result-growth {
+  background: var(--peri-light);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.result-growth-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--peri-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.result-growth p {
+  font-size: 15px;
+  color: var(--brown);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.result-cta {
+  background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.result-cta-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.result-cta-title em { font-style: italic; }
+.result-cta-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.result-cta-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--terra);
+  padding: 13px 32px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: var(--sans);
+}
+.result-cta-btn:hover {
+  background: var(--cream);
+  transform: translateY(-1px);
+}
+
+.retake-btn {
+  display: block;
+  text-align: center;
+  background: none;
+  border: 1px solid rgba(212,112,75,0.3);
+  color: var(--brown-light);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--sans);
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+.retake-btn:hover { border-color: var(--terra); color: var(--terra); }
+
+.share-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.share-btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  border: 1px solid;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.share-ig { background: var(--peri-light); border-color: var(--peri); color: var(--peri-dark); }
+.share-ig:hover { background: var(--peri); color: var(--white); }
+.share-copy { background: var(--terra-light); border-color: var(--terra); color: var(--terra); }
+.share-copy:hover { background: var(--terra); color: var(--white); }
+
+/* SIGNATURE */
+.quiz-signature {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--peri-dark);
+  margin-top: 32px;
+  opacity: 0.8;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .quiz-wrapper { padding: 32px 16px 60px; }
+  .question-card { padding: 24px 20px; }
+  .result-body { padding: 24px 20px; }
+  .gate-form { padding: 24px 20px; }
+  .stats-row { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">stephanie listens <span>♡</span></a>
+  <a href="index.html" class="nav-back">← back to site</a>
+</nav>
+
+<div class="quiz-wrapper">
+
+  <!-- INTRO SCREEN -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-eyebrow">free quiz · 2 minutes</div>
+    <h1 class="intro-title">
+      What's your<br><em>Behavior Style?</em>
+    </h1>
+    <p class="intro-subtitle">
+      Discover how you naturally respond to challenging behavior —
+      and what it reveals about how you connect with the children
+      or clients in front of you.
+    </p>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Style Types</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Questions</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">~2 min</span>
+        <span class="stat-label">To Results</span>
+      </div>
+    </div>
+    <button class="start-btn" onclick="startQuiz()">Take the Quiz →</button>
+    <p class="intro-note">For parents, BTs, BCBAs, and anyone who works with children.</p>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div id="question-screen" class="question-screen" style="display:none;">
+    <div class="progress-bar-wrapper">
+      <div class="progress-info">
+        <span class="progress-label">Your Progress</span>
+        <span class="progress-count" id="progress-count">1 of 8</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:12.5%"></div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <span class="question-num" id="question-num">Question 1 of 8</span>
+      <p class="question-text" id="question-text"></p>
+      <div class="options-grid" id="options-grid"></div>
+    </div>
+
+    <div class="nav-btns">
+      <button class="back-btn" id="back-btn" onclick="prevQuestion()" disabled>← Back</button>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next →</button>
+    </div>
+  </div>
+
+  <!-- EMAIL GATE -->
+  <div id="email-gate" class="email-gate" style="display:none;">
+    <div class="gate-icon">✨</div>
+    <h2 class="gate-title">Your results are <em>ready.</em></h2>
+    <p class="gate-subtitle">
+      Enter your name and email to unlock your Behavior Style —
+      plus a free resource matched to your type.
+    </p>
+    <div class="gate-form">
+      <div class="gate-field">
+        <label>First Name</label>
+        <input type="text" id="gate-name" placeholder="Your first name" required>
+      </div>
+      <div class="gate-field">
+        <label>Email Address</label>
+        <input type="email" id="gate-email" placeholder="your@email.com" required>
+      </div>
+      <div class="gate-field">
+        <label>I am a... <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;opacity:0.6;">(optional)</span></label>
+        <input type="text" id="gate-role" placeholder="Parent / BT / BCBA / Teacher / Other">
+      </div>
+      <button class="unlock-btn" onclick="unlockResults()">Unlock My Results →</button>
+      <p class="gate-disclaimer">No spam. Just your results + free resources from Stephanie Listens. ♡</p>
+    </div>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div id="results-screen" class="results-screen" style="display:none;"></div>
+
+</div>
+
+<script>
+// ── QUIZ DATA ────────────────────────────────────────────────────
+// Scoring: F=Fixer, C=Connector, A=Analyzer, N=Nurturer
+const questions = [
+  {
+    text: "A child you're working with has a sudden meltdown. Your very first instinct is:",
+    options: [
+      { text: "Find the trigger immediately and remove it or redirect", type: "F" },
+      { text: "Get down to their level and just be present with them first", type: "C" },
+      { text: "Start mentally running through what happened in the minutes before", type: "A" },
+      { text: "Stay calm and focus on making them feel safe above everything else", type: "N" }
+    ]
+  },
+  {
+    text: 'A parent tells you: they have tried everything and nothing works. You respond:',
+    options: [
+      { text: "Ask them to walk you through exactly what they've tried — then offer what's next", type: "F" },
+      { text: "Validate how exhausted they are before you say anything else", type: "C" },
+      { text: "Ask questions to identify what patterns might be in the data you have", type: "A" },
+      { text: "Reassure them they're doing better than they think — then build from there", type: "N" }
+    ]
+  },
+  {
+    text: "When you observe a behavior that doesn't match the behavior plan, you:",
+    options: [
+      { text: "Note the gap and want to adjust the plan immediately", type: "F" },
+      { text: "Wonder what the relationship context was in that moment", type: "C" },
+      { text: "Review all the data to see if this is a pattern or an outlier", type: "A" },
+      { text: "Check in with how the child seemed emotionally that day", type: "N" }
+    ]
+  },
+  {
+    text: "Your supervision style (or ideal supervision style) looks most like:",
+    options: [
+      { text: "Clear objectives, specific feedback, actionable next steps every time", type: "F" },
+      { text: "Open conversation, how are you feeling about the work right now", type: "C" },
+      { text: "Walking through the data together and identifying what the numbers say", type: "A" },
+      { text: "Asking the supervisee what they need before telling them what I see", type: "N" }
+    ]
+  },
+  {
+    text: "What frustrates you most about how behavior is approached in your field?",
+    options: [
+      { text: "Too much talking, not enough actually fixing the problem", type: "F" },
+      { text: "We focus on the behavior and forget there's a relationship underneath it", type: "C" },
+      { text: "Decisions are made without looking at the data carefully enough", type: "A" },
+      { text: "We prioritize compliance over the child's actual emotional experience", type: "N" }
+    ]
+  },
+  {
+    text: "A child refuses a task for the third session in a row. You think:",
+    options: [
+      { text: "The demand needs to be modified — this isn't working, let's change it", type: "F" },
+      { text: "Something has shifted in how safe this child feels with the task or with me", type: "C" },
+      { text: "I need to look at what's consistent across those three sessions", type: "A" },
+      { text: "They're telling me something important — I need to slow down and listen", type: "N" }
+    ]
+  },
+  {
+    text: "Which phrase most represents your personal philosophy about behavior?",
+    options: [
+      { text: "Every behavior has a solution — we just haven't found the right one yet", type: "F" },
+      { text: "Behavior is a window into relationship — read the relationship first", type: "C" },
+      { text: "Behavior is data — understand the function and the response follows logically", type: "A" },
+      { text: "Every behavior is communication — and every communicator deserves to be heard", type: "N" }
+    ]
+  },
+  {
+    text: "After a really hard session, how do you typically process it?",
+    options: [
+      { text: "Make a list of what to do differently next time right away", type: "F" },
+      { text: "Talk it through with someone — it helps me figure out what happened", type: "C" },
+      { text: "Review my notes and look for what the data is telling me", type: "A" },
+      { text: "Sit with it for a bit — I need to feel my way through before I analyze it", type: "N" }
+    ]
+  }
+];
+
+// ── RESULT TYPES ─────────────────────────────────────────────────
+const results = {
+  F: {
+    key: 'fixer',
+    name: 'The Fixer',
+    tagline: 'You see the problem. You want to solve it. Now.',
+    desc: `You are a natural problem-solver. When behavior shows up, your brain immediately starts mapping solutions — and that instinct has helped a lot of families and clients. You're efficient, action-oriented, and you don't let things linger. People trust you because you move.\n\nThe growth edge for Fixers is learning to pause before the pivot. Sometimes the most important thing you can do in a hard moment is stay in it a little longer — not because there's no solution, but because the person in front of you needs to feel heard before they can receive help. The fix works better when the relationship comes first.`,
+    strengths: [
+      'Natural problem-solver — you move fast when it matters',
+      'Clients and families trust you because you take action',
+      'Excellent at identifying what\'s not working and pivoting',
+      'Strong at crisis management and in-the-moment decisions',
+      'You don\'t let families stay stuck when there\'s a path forward'
+    ],
+    growth: 'Your growth edge: Practice the 3-second pause before responding to behavior. The solution is often right — but the timing matters. Connection first, correction second.',
+    cta_text: 'The BT Survival Guide has a whole section on what to do when sessions fall apart — written for people who want to act but need a framework for when to slow down first.'
+  },
+  C: {
+    key: 'connector',
+    name: 'The Connector',
+    tagline: 'You read the room before anything else.',
+    desc: `You understand something fundamental that many behavior professionals miss: behavior lives in relationship. Before you look at data, before you adjust a program, you read the room. You check in. You tune in. And that attunement is one of the most powerful clinical tools there is.\n\nConnectors are often the reason families stay engaged. You make people feel seen — and in a field that can feel very clinical, that's rare and valuable. The growth edge for Connectors is adding structure to your warmth. Your instincts are excellent. Pairing them with clear frameworks makes your impact more consistent and sustainable.`,
+    strengths: [
+      'Families trust and open up to you — you create safety fast',
+      'You naturally notice emotional shifts before they become behaviors',
+      'Excellent at family training and parent coaching',
+      'Strong rapport-building — clients want to come to sessions',
+      'You understand that the relationship IS the intervention'
+    ],
+    growth: 'Your growth edge: Structure supports warmth. Build clear frameworks around your relational instincts so your approach is repeatable — not just when the connection feels easy.',
+    cta_text: 'If you\'re a parent or professional who leads with connection, the BT Survival Guide will help you understand the functions behind behavior — giving your intuition a clinical foundation.'
+  },
+  A: {
+    key: 'analyzer',
+    name: 'The Analyzer',
+    tagline: 'The data tells you everything. If you know how to read it.',
+    desc: `You are rigorous, evidence-based, and precise. When others are guessing, you're looking for the pattern. When others are reacting, you're hypothesizing. Your clinical decisions are grounded in observation and logic — and that discipline has protected a lot of clients from programs that don't actually work.\n\nAnalyzers bring an important gift to this field: clarity. The growth edge is remembering that behavior happens inside a human being, not just inside a data sheet. The function is real. But the person who's communicating through that behavior also has a nervous system, a relationship history, and a lived experience that the data doesn't always capture.`,
+    strengths: [
+      'Evidence-based decision-making — you don\'t guess, you observe',
+      'Excellent at functional behavior assessments and pattern recognition',
+      'Strong at identifying what interventions are actually working',
+      'Clients and families benefit from your clinical precision',
+      'You protect people from programs built on assumptions, not data'
+    ],
+    growth: 'Your growth edge: Data is essential — but so is what happens between the data points. Practice asking "what was the emotional context here?" alongside "what was the antecedent?"',
+    cta_text: 'Your analytical mind is a strength. The BT Survival Guide includes a section on evaluating behavior plans critically — something Analyzers are built for.'
+  },
+  N: {
+    key: 'nurturer',
+    name: 'The Nurturer',
+    tagline: 'You hold the space. Every child feels it.',
+    desc: `You lead with dignity. Before compliance, before data, before programs — you make sure the person in front of you feels safe, seen, and valued. That's not soft. That's the foundation of every effective intervention that has ever worked.\n\nNurturers often carry the emotional weight of this work more than anyone else — because you feel it. You understand that every behavior is communication, and you take that seriously. The growth edge for Nurturers is learning to hold space and hold limits at the same time. Compassion without structure can leave families without a roadmap. Your warmth is a superpower — and it becomes even more powerful when it's paired with clear, consistent expectations.`,
+    strengths: [
+      'Children and families feel safe with you — you create belonging',
+      'Deeply affirming and person-first in every interaction',
+      'Excellent at family training, parent coaching, and trauma-informed practice',
+      'You understand that dignity is non-negotiable in this work',
+      'Your presence alone often de-escalates before any strategy is needed'
+    ],
+    growth: 'Your growth edge: Warmth and structure aren\'t opposites. Practice holding a boundary with the same gentleness you hold space — consistency is a form of care too.',
+    cta_text: 'Your values align with everything Stephanie Listens is built on. The BT Survival Guide was written with Nurturers in mind — especially the section on what to do when a session falls apart.'
+  }
+};
+
+// ── STATE ────────────────────────────────────────────────────────
+let currentQ = 0;
+let answers = [];
+let selectedOption = null;
+
+function startQuiz() {
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('question-screen').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('question-num').textContent = `Question ${currentQ + 1} of ${questions.length}`;
+  document.getElementById('progress-count').textContent = `${currentQ + 1} of ${questions.length}`;
+  document.getElementById('question-text').textContent = q.text;
+  document.getElementById('progress-fill').style.width = `${((currentQ + 1) / questions.length) * 100}%`;
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  const letters = ['A', 'B', 'C', 'D'];
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ] === i ? ' selected' : '');
+    btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span>${opt.text}</span>`;
+    btn.onclick = () => selectOption(i);
+    grid.appendChild(btn);
+  });
+
+  selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+  document.getElementById('next-btn').classList.toggle('active', selectedOption !== null);
+  document.getElementById('back-btn').disabled = currentQ === 0;
+
+  const nextBtn = document.getElementById('next-btn');
+  nextBtn.textContent = currentQ === questions.length - 1 ? 'See My Results →' : 'Next →';
+}
+
+function selectOption(index) {
+  selectedOption = index;
+  answers[currentQ] = index;
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    btn.classList.toggle('selected', i === index);
+  });
+  document.getElementById('next-btn').classList.add('active');
+}
+
+function nextQuestion() {
+  if (selectedOption === null) return;
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    showEmailGate();
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showEmailGate() {
+  document.getElementById('question-screen').style.display = 'none';
+  document.getElementById('email-gate').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function calculateResult() {
+  const scores = { F: 0, C: 0, A: 0, N: 0 };
+  answers.forEach((answerIndex, qIndex) => {
+    const type = questions[qIndex].options[answerIndex].type;
+    scores[type]++;
+  });
+  return Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+}
+
+async function unlockResults() {
+  const name = document.getElementById('gate-name').value.trim();
+  const email = document.getElementById('gate-email').value.trim();
+  const role = document.getElementById('gate-role').value.trim();
+
+  if (!name || !email) {
+    alert('Please enter your name and email to unlock your results.');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  const btn = document.querySelector('.unlock-btn');
+  btn.textContent = 'Loading your results...';
+  btn.disabled = true;
+
+  const resultType = calculateResult();
+
+  // Send to Formspree
+  try {
+    await fetch('https://formspree.io/f/xaqkepyl', {
+      method: 'POST',
+      body: JSON.stringify({
+        name, email, role,
+        quiz_result: results[resultType].name,
+        source: 'behavior-style-quiz'
+      }),
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+    });
+  } catch(e) {
+    console.log('Form submission error:', e);
+  }
+
+  showResults(resultType, name);
+}
+
+function showResults(type, name) {
+  document.getElementById('email-gate').style.display = 'none';
+  const screen = document.getElementById('results-screen');
+  screen.style.display = 'block';
+
+  const r = results[type];
+  const firstName = name.split(' ')[0];
+
+  screen.innerHTML = `
+    <div class="result-hero ${r.key}">
+      <span class="result-type-label">Your Behavior Style</span>
+      <div class="result-type-name">${r.name}</div>
+      <div class="result-type-tagline">${r.tagline}</div>
+    </div>
+
+    <div class="result-body">
+      <h2 class="result-section-title">Hey ${firstName} — here's what this means. ♡</h2>
+      <p class="result-desc">${r.desc.replace('\n\n', '</p><p class="result-desc" style="margin-top:16px;">')}</p>
+
+      <h3 class="result-section-title" style="margin-top:24px;">Your Strengths</h3>
+      <ul class="result-strengths">
+        ${r.strengths.map(s => `<li>${s}</li>`).join('')}
+      </ul>
+
+      <div class="result-growth">
+        <div class="result-growth-title">Growth Edge</div>
+        <p>${r.growth}</p>
+      </div>
+    </div>
+
+    <div class="result-cta">
+      <div class="result-cta-title">Take it <em>further.</em></div>
+      <p class="result-cta-text">${r.cta_text}</p>
+      <a href="index.html#guide" class="result-cta-btn">Get the free BT Survival Guide →</a>
+    </div>
+
+    <div class="share-row">
+      <button class="share-btn share-ig" onclick="copyResult('${r.name}')">📱 Share on Instagram</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy quiz link</button>
+    </div>
+
+    <button class="retake-btn" onclick="retake()">Retake the quiz</button>
+
+    <p class="quiz-signature">Check your inbox for your results + a resource from me.<br>listening always, -S ♡</p>
+  `;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyResult(typeName) {
+  const text = `I just took the Behavior Style Quiz on @stephanielistens and I'm "${typeName}"! Take yours → stephanielistens.com/quiz`;
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Caption copied! Paste it into your Instagram post or story.');
+  });
+}
+
+function copyLink() {
+  navigator.clipboard.writeText('https://stephanielistens.com/quiz').then(() => {
+    alert('Quiz link copied to clipboard!');
+  });
+}
+
+function retake() {
+  currentQ = 0;
+  answers = [];
+  selectedOption = null;
+  document.getElementById('results-screen').style.display = 'none';
+  document.getElementById('intro-screen').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Type of Parent Are You When Behavior Gets Hard? | Stephanie Listens</title>
+<meta name="description" content="Take the 2-minute quiz: discover what type of parent you are when behavior gets hard - and the exact phrase that works best for your style. Free from BCBA Stephanie Listens.">
+<meta property="og:title" content="What Type of Parent Are You When Behavior Gets Hard?">
+<meta property="og:description" content="2-minute quiz + free guide with the 5 phrases that stop meltdowns before they escalate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4704B'/%3E%3Ctext x='50' y='65' font-family='Georgia,serif' font-size='50' font-style='italic' fill='white' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --terra: #D4704B; --terra-dark: #B25D3D; --terra-light: #FAEDE5;
+  --peri: #9FA8DA; --peri-dark: #7B85C0; --peri-light: #ECEEF7;
+  --cream: #F5F1E8; --brown: #5C4033; --brown-light: #6B3A22; --white: #FFFFFF;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--brown); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+
+.nav { background: var(--cream); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid rgba(212,112,75,0.2); position: sticky; top: 0; z-index: 10; }
+.nav-logo { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--brown-light); text-decoration: none; }
+.nav-logo span { color: var(--peri); }
+.nav-back { font-size: 13px; color: var(--terra); text-decoration: none; font-weight: 500; }
+
+.quiz-wrapper { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.intro-screen { text-align: center; animation: fadeUp 0.6s ease; }
+.intro-eyebrow { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--peri); font-weight: 500; margin-bottom: 20px; padding: 6px 16px; background: rgba(159,168,218,0.12); border-radius: 20px; }
+.intro-title { font-family: var(--serif); font-size: clamp(36px, 6vw, 56px); font-weight: 400; line-height: 1.1; color: var(--brown); margin-bottom: 20px; }
+.intro-title em { color: var(--terra); font-style: italic; }
+.intro-subtitle { font-size: 17px; color: var(--brown-light); line-height: 1.7; max-width: 540px; margin: 0 auto 40px; opacity: 0.9; }
+.stats-row { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.stat-num { font-family: var(--serif); font-size: 22px; color: var(--terra); font-weight: 500; }
+.stat-label { font-size: 12px; color: var(--brown-light); text-transform: uppercase; letter-spacing: 1px; opacity: 0.75; }
+.start-btn { background: var(--terra); color: var(--white); border: none; padding: 16px 48px; border-radius: 50px; font-size: 16px; font-weight: 500; cursor: pointer; font-family: var(--sans); transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(212,112,75,0.3); }
+.start-btn:hover { background: var(--terra-dark); transform: translateY(-2px); }
+.intro-note { margin-top: 16px; font-size: 12px; color: var(--brown-light); opacity: 0.6; }
+
+.question-screen { animation: fadeUp 0.4s ease; }
+.progress-bar-wrapper { margin-bottom: 36px; }
+.progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.progress-label { font-size: 12px; color: var(--brown-light); opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+.progress-count { font-family: var(--serif); font-size: 16px; color: var(--terra); font-style: italic; }
+.progress-track { height: 4px; background: rgba(212,112,75,0.15); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--terra); border-radius: 2px; transition: width 0.4s ease; }
+
+.question-card { background: var(--white); border-radius: 24px; padding: 40px; border: 0.5px solid rgba(212,112,75,0.15); box-shadow: 0 4px 24px rgba(92,64,51,0.06); margin-bottom: 20px; }
+.question-num { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--terra); font-weight: 500; margin-bottom: 16px; display: block; }
+.question-text { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); font-weight: 400; line-height: 1.3; color: var(--brown); margin-bottom: 32px; }
+.options-grid { display: flex; flex-direction: column; gap: 12px; }
+.option-btn { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; background: var(--cream); border: 1.5px solid rgba(212,112,75,0.15); border-radius: 14px; cursor: pointer; font-family: var(--sans); font-size: 15px; color: var(--brown); text-align: left; line-height: 1.5; transition: all 0.2s ease; width: 100%; }
+.option-btn:hover { border-color: var(--terra); background: var(--terra-light); transform: translateX(4px); }
+.option-btn.selected { border-color: var(--terra); background: var(--terra-light); box-shadow: 0 0 0 3px rgba(212,112,75,0.15); }
+.option-letter { width: 28px; height: 28px; border-radius: 50%; background: var(--white); border: 1.5px solid rgba(212,112,75,0.3); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--terra); flex-shrink: 0; margin-top: 1px; }
+.option-btn.selected .option-letter { background: var(--terra); color: var(--white); border-color: var(--terra); }
+
+.nav-btns { display: flex; justify-content: space-between; align-items: center; }
+.back-btn { background: none; border: 1px solid rgba(212,112,75,0.3); color: var(--brown-light); padding: 12px 24px; border-radius: 50px; font-family: var(--sans); font-size: 14px; cursor: pointer; }
+.back-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.next-btn { background: var(--terra); color: var(--white); border: none; padding: 12px 32px; border-radius: 50px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; opacity: 0.4; pointer-events: none; transition: all 0.3s ease; }
+.next-btn.active { opacity: 1; pointer-events: all; }
+
+.email-gate { animation: fadeUp 0.5s ease; text-align: center; }
+.gate-icon { width: 72px; height: 72px; background: var(--terra-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px; }
+.gate-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 400; color: var(--brown); margin-bottom: 12px; line-height: 1.2; }
+.gate-title em { color: var(--terra); font-style: italic; }
+.gate-subtitle { font-size: 16px; color: var(--brown-light); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; opacity: 0.9; }
+.gate-bonus { background: var(--peri-light); border-radius: 14px; padding: 16px 24px; margin: 0 auto 24px; max-width: 480px; font-size: 14px; color: var(--brown); line-height: 1.6; }
+.gate-bonus strong { color: var(--peri-dark); }
+.gate-form { background: var(--white); border-radius: 20px; padding: 32px; border: 0.5px solid rgba(159,168,218,0.3); box-shadow: 0 4px 24px rgba(92,64,51,0.06); max-width: 480px; margin: 0 auto; }
+.gate-field { margin-bottom: 16px; text-align: left; }
+.gate-field label { display: block; font-size: 12px; font-weight: 600; color: var(--brown); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+.gate-field input { width: 100%; padding: 14px 16px; border: 1px solid rgba(159,168,218,0.4); border-radius: 12px; font-size: 15px; color: var(--brown); font-family: var(--sans); background: var(--cream); outline: none; }
+.gate-field input:focus { border-color: var(--peri); box-shadow: 0 0 0 3px rgba(159,168,218,0.15); background: var(--white); }
+.unlock-btn { width: 100%; background: var(--terra); color: var(--white); border: none; padding: 16px; border-radius: 50px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: var(--sans); margin-top: 8px; box-shadow: 0 4px 16px rgba(212,112,75,0.25); }
+.unlock-btn:hover { background: var(--terra-dark); }
+.gate-disclaimer { font-size: 12px; color: var(--brown-light); opacity: 0.55; margin-top: 12px; }
+
+.results-screen { animation: fadeUp 0.5s ease; }
+.result-hero { text-align: center; padding: 48px 40px; border-radius: 24px; margin-bottom: 24px; }
+.result-hero.anchor { background: linear-gradient(135deg, var(--peri) 0%, var(--peri-dark) 100%); }
+.result-hero.detective { background: linear-gradient(135deg, var(--brown) 0%, #3D2519 100%); }
+.result-hero.coach { background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%); }
+.result-hero.healer { background: linear-gradient(135deg, #E8A77D 0%, var(--terra) 100%); }
+.result-type-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 500; margin-bottom: 12px; display: block; }
+.result-type-name { font-family: var(--serif); font-size: clamp(40px, 7vw, 64px); font-weight: 400; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+.result-type-name em { font-style: italic; }
+.result-type-tagline { font-family: var(--serif); font-style: italic; font-size: 19px; color: rgba(255,255,255,0.9); max-width: 420px; margin: 0 auto; line-height: 1.4; }
+
+.result-body { background: var(--white); border-radius: 24px; padding: 36px; border: 0.5px solid rgba(212,112,75,0.15); box-shadow: 0 4px 24px rgba(92,64,51,0.06); margin-bottom: 20px; }
+.result-section-title { font-family: var(--serif); font-size: 22px; color: var(--terra); font-weight: 500; margin-bottom: 12px; }
+.result-desc { font-size: 16px; color: var(--brown); line-height: 1.8; margin-bottom: 24px; opacity: 0.9; }
+.result-phrase-box { background: var(--terra-light); border-left: 4px solid var(--terra); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.result-phrase-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--terra); font-weight: 600; margin-bottom: 8px; }
+.result-phrase { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--brown); line-height: 1.4; }
+.result-strengths { list-style: none; padding: 0; margin-bottom: 24px; }
+.result-strengths li { padding: 10px 0; padding-left: 28px; position: relative; font-size: 15px; color: var(--brown); line-height: 1.5; border-bottom: 0.5px solid rgba(212,112,75,0.1); }
+.result-strengths li:last-child { border-bottom: none; }
+.result-strengths li::before { content: '♡'; position: absolute; left: 0; color: var(--terra); font-size: 13px; }
+.result-growth { background: var(--peri-light); border-radius: 14px; padding: 20px 24px; margin-bottom: 24px; }
+.result-growth-title { font-size: 13px; font-weight: 600; color: var(--peri-dark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.result-growth p { font-size: 15px; color: var(--brown); line-height: 1.6; opacity: 0.9; }
+
+.result-cta { background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%); border-radius: 20px; padding: 32px; text-align: center; margin-bottom: 20px; }
+.result-cta-title { font-family: var(--serif); font-size: 24px; color: var(--white); font-weight: 400; margin-bottom: 10px; line-height: 1.3; }
+.result-cta-title em { font-style: italic; }
+.result-cta-text { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 20px; }
+.result-cta-btn { display: inline-block; background: var(--white); color: var(--terra); padding: 13px 32px; border-radius: 50px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-family: var(--sans); }
+.result-cta-btn:hover { background: var(--cream); }
+
+.share-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.share-btn { padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--sans); border: 1px solid; transition: all 0.2s ease; text-decoration: none; display: inline-block; }
+.share-ig { background: var(--peri-light); border-color: var(--peri); color: var(--peri-dark); }
+.share-ig:hover { background: var(--peri); color: var(--white); }
+.share-copy { background: var(--terra-light); border-color: var(--terra); color: var(--terra); }
+.share-copy:hover { background: var(--terra); color: var(--white); }
+
+.retake-btn { display: block; text-align: center; background: none; border: 1px solid rgba(212,112,75,0.3); color: var(--brown-light); padding: 12px 24px; border-radius: 50px; font-family: var(--sans); font-size: 14px; cursor: pointer; margin: 0 auto; width: fit-content; }
+.quiz-signature { text-align: center; font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--peri-dark); margin-top: 32px; opacity: 0.8; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) {
+  .quiz-wrapper { padding: 32px 16px 60px; }
+  .question-card, .result-body, .gate-form { padding: 24px 20px; }
+  .stats-row { gap: 20px; }
+  .result-hero { padding: 36px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">stephanie listens <span>♡</span></a>
+  <a href="index.html" class="nav-back">← back to site</a>
+</nav>
+
+<div class="quiz-wrapper">
+
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-eyebrow">free quiz · 2 minutes · for parents</div>
+    <h1 class="intro-title">What type of parent are you when behavior gets <em>hard?</em></h1>
+    <p class="intro-subtitle">Discover your parenting style under stress — plus the exact phrase that works best for YOUR way of showing up. Take it, share it, save your phrase.</p>
+    <div class="stats-row">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Parent Types</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Questions</span></div>
+      <div class="stat"><span class="stat-num">~2 min</span><span class="stat-label">To Results</span></div>
+    </div>
+    <button class="start-btn" onclick="startQuiz()">Take the quiz →</button>
+    <p class="intro-note">Plus: get the free guide with all 5 magic phrases ♡</p>
+  </div>
+
+  <div id="question-screen" class="question-screen" style="display:none;">
+    <div class="progress-bar-wrapper">
+      <div class="progress-info">
+        <span class="progress-label">Your Progress</span>
+        <span class="progress-count" id="progress-count">1 of 7</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:14.28%"></div></div>
+    </div>
+    <div class="question-card">
+      <span class="question-num" id="question-num">Question 1 of 7</span>
+      <p class="question-text" id="question-text"></p>
+      <div class="options-grid" id="options-grid"></div>
+    </div>
+    <div class="nav-btns">
+      <button class="back-btn" id="back-btn" onclick="prevQuestion()" disabled>← Back</button>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next →</button>
+    </div>
+  </div>
+
+  <div id="email-gate" class="email-gate" style="display:none;">
+    <div class="gate-icon">✨</div>
+    <h2 class="gate-title">Your parent type is <em>ready.</em></h2>
+    <p class="gate-subtitle">Enter your name and email to see your result — and get the free guide with all 5 phrases that stop meltdowns before they escalate.</p>
+    <div class="gate-bonus">
+      <strong>You will get:</strong> Your parent type + your signature phrase + the full guide with all 5 phrases, sent straight to your inbox.
+    </div>
+    <div class="gate-form">
+      <div class="gate-field">
+        <label>First Name</label>
+        <input type="text" id="gate-name" placeholder="Your first name" required>
+      </div>
+      <div class="gate-field">
+        <label>Email Address</label>
+        <input type="email" id="gate-email" placeholder="your@email.com" required>
+      </div>
+      <button class="unlock-btn" onclick="unlockResults()">Get my results + free guide →</button>
+      <p class="gate-disclaimer">No spam. Just your results + the free guide. Unsubscribe anytime. ♡</p>
+    </div>
+  </div>
+
+  <div id="results-screen" class="results-screen" style="display:none;"></div>
+
+</div>
+
+<script>
+const questions = [
+  {
+    text: "It is 6pm. Your kid is having a meltdown over the wrong color cup. Your first move is:",
+    options: [
+      { text: "Take a breath. Stay calm. Sit with them through it.", type: "anchor" },
+      { text: "Ask what is really going on. Tired? Hungry? Overstimulated?", type: "detective" },
+      { text: "Get them a different cup, move it along, dinner is ready.", type: "coach" },
+      { text: "Hold them close. Their feelings are so big right now.", type: "healer" }
+    ]
+  },
+  {
+    text: "When your child hits or throws something, your honest first thought is:",
+    options: [
+      { text: "Okay, breathe. I have got to stay regulated for them.", type: "anchor" },
+      { text: "Something happened right before this. I need to figure out what.", type: "detective" },
+      { text: "Nope. We address this directly. Hitting is not okay.", type: "coach" },
+      { text: "Oh sweetie, something is really hurting in there.", type: "healer" }
+    ]
+  },
+  {
+    text: "Other parents would describe you as:",
+    options: [
+      { text: "The calm one. They wonder how you do not lose it.", type: "anchor" },
+      { text: "The thoughtful one. You always seem to get WHY kids do things.", type: "detective" },
+      { text: "The structured one. Your kids know exactly what to expect.", type: "coach" },
+      { text: "The warm one. Their kids run up to you at every playdate.", type: "healer" }
+    ]
+  },
+  {
+    text: "Your kid is refusing to leave the park. Inside, you feel:",
+    options: [
+      { text: "Patient. This is just where they are right now.", type: "anchor" },
+      { text: "Curious. Something happened that made this transition harder.", type: "detective" },
+      { text: "Done. The boundary is the boundary. We are leaving.", type: "coach" },
+      { text: "Soft. They are having such a good time, I get it.", type: "healer" }
+    ]
+  },
+  {
+    text: "When friends ask for advice about their kid's behavior, you say:",
+    options: [
+      { text: "Stay calm yourself first. Your nervous system matters too.", type: "anchor" },
+      { text: "What is really going on for them underneath?", type: "detective" },
+      { text: "Be clear, be consistent, and follow through.", type: "coach" },
+      { text: "Just love them through it. They need to feel safe.", type: "healer" }
+    ]
+  },
+  {
+    text: "After a really hard parenting day, you typically:",
+    options: [
+      { text: "Sit quietly. Maybe meditate or journal. I need stillness to reset.", type: "anchor" },
+      { text: "Replay it in my head. What was I missing? What did they need?", type: "detective" },
+      { text: "Make a plan. What will I do differently tomorrow?", type: "coach" },
+      { text: "Have a good cry. Or call someone who gets it.", type: "healer" }
+    ]
+  },
+  {
+    text: "Your secret parenting superpower:",
+    options: [
+      { text: "I can stay regulated when everyone around me is losing it.", type: "anchor" },
+      { text: "I can usually figure out what my kid is actually trying to tell me.", type: "detective" },
+      { text: "I can make hard things feel doable and clear.", type: "coach" },
+      { text: "My kids feel safe with me. Always. No matter what.", type: "healer" }
+    ]
+  }
+];
+
+const results = {
+  anchor: {
+    key: 'anchor',
+    name: 'The Anchor',
+    tagline: "When everyone else is in the storm, you are the calm. Your nervous system is the gift.",
+    phrase: "I am right here. We are going to ride this out together.",
+    desc: "You are the parent who can hold steady when everything is falling apart. You have learned (probably the hard way) that your calm IS the intervention. When your child is dysregulated, you do not match their energy. You become the safe landing place. That is rare. That is powerful. That is co-regulation in action — and it is what every child needs, especially in their hardest moments.\n\nThe research backs you up: kids cannot regulate themselves until someone regulates WITH them. Your steady presence is teaching your child's nervous system how to come back to safe. Even when it does not feel like it is working in the moment — it is working. Every. Single. Time.",
+    strengths: [
+      'Your child trusts you with their biggest feelings',
+      'You de-escalate without saying a word, just by being present',
+      'You model emotional regulation simply by living it',
+      'Other parents come to YOU when they need to feel grounded',
+      'You understand: presence > performance, always'
+    ],
+    growth: "Your growth edge: Sometimes calm gets read as permissive. Pair your steady presence with clear, gentle structure so your kids know both that you see them AND that the limit holds.",
+    cta_text: "Anchors thrive with frameworks that match their style. The full guide has all 5 phrases — and the one that fits Anchors most is the one most parents never learn until it is too late."
+  },
+  detective: {
+    key: 'detective',
+    name: 'The Detective',
+    tagline: "You see what others miss. The behavior is never the whole story to you.",
+    phrase: "Help me understand what is happening for you right now.",
+    desc: "You are the parent who refuses to accept 'because they are being difficult' as an answer. You know every behavior is communication — and you are determined to figure out what your child is actually saying. You read the body language. You notice the patterns. You know which transitions are hard, which textures are dealbreakers, which words shut your kid down.\n\nThat curiosity is your superpower. It is also why your child feels deeply understood by you. Most kids spend their childhoods being told what they did wrong. Yours gets to be asked what they were feeling. That changes everything — for who they become AND for the relationship you build together.",
+    strengths: [
+      'You spot triggers most parents (and even professionals) miss',
+      'Your child feels understood, not judged',
+      'You build emotional intelligence in your kid naturally',
+      'You will not accept surface-level explanations',
+      'You see the WHY behind the behavior — every time'
+    ],
+    growth: "Your growth edge: Sometimes understanding can delay action. Your kids need to know WHY AND they need to know what to do instead. Pair your curiosity with one clear next step.",
+    cta_text: "Detectives love language that opens kids up. The full guide gives you 5 specific phrases for getting underneath behavior — the way you naturally want to. You will use these immediately."
+  },
+  coach: {
+    key: 'coach',
+    name: 'The Coach',
+    tagline: "Clear, structured, consistent. Your kids know exactly what to expect — and that is love too.",
+    phrase: "Here is what is going to happen. I know you can do hard things.",
+    desc: "You are the parent who provides what so many kids desperately need: predictability. You set the expectation, you hold the line, and your follow-through is unwavering. That is not strict — that is safe. Because kids who know what to expect can focus their energy on growing instead of testing the system to find out where the edges are.\n\nThe Coach parent often gets misunderstood. People see structure and assume it is rigidity. But what your kids actually feel is SAFETY. The world is chaotic. School is unpredictable. Your home is a place where things make sense — and that is one of the greatest gifts a parent can give. The trick is making sure your kids feel as held as they are guided.",
+    strengths: [
+      'Your kids know the rules — which means they feel safe',
+      'You follow through, which builds real trust',
+      'You teach your kids that they can do hard things',
+      'Transitions and routines run smoothly in your house',
+      'You believe in your kid being capable — and they feel it'
+    ],
+    growth: "Your growth edge: Structure works best when it is paired with warmth. Slow down occasionally. Sit with feelings before you move to next steps. Your kids need both the boundary AND the hug.",
+    cta_text: "Coaches love practical scripts. The full guide gives you 5 specific phrases that hold the line WITHOUT shutting down connection. You will start using them today."
+  },
+  healer: {
+    key: 'healer',
+    name: 'The Healer',
+    tagline: "You feel everything. Your child does not have to perform to be loved.",
+    phrase: "Your feelings make sense. I love you exactly like this.",
+    desc: "You are the parent who leads with love every single time. Before correction, before lessons, before consequences — there is connection. You believe your child's feelings are valid no matter how inconvenient, and that belief alone is healing for kids who live in a world that constantly tells them their emotions are too much.\n\nHealers raise kids who grow up knowing they do not have to earn love. They do not have to mask their feelings to be accepted. They do not have to perform okay-ness when they are falling apart. That is a generational gift. The challenge for Healers is remembering that boundaries are also a form of love — and that holding a limit consistently does not erase the warmth you bring. Your kids can feel deeply safe AND have clear expectations. Both things, together, are the magic.",
+    strengths: [
+      'Your kids do not hide their feelings from you',
+      'They feel completely accepted, exactly as they are',
+      'You model emotional safety so they can build it in other relationships',
+      'You raise kids who grow up confident in who they are',
+      'Your warmth is the foundation everything else gets built on'
+    ],
+    growth: "Your growth edge: Compassion without structure can leave kids confused about expectations. Pair your warmth with clear, gentle limits so they know what to expect AND that they are deeply loved.",
+    cta_text: "Healers love language that honors feelings AND moves things forward. The full guide gives you 5 phrases that validate AND redirect — the both/and your style is built for."
+  }
+};
+
+let currentQ = 0;
+let answers = [];
+let selectedOption = null;
+
+function startQuiz() {
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('question-screen').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentQ];
+  document.getElementById('question-num').textContent = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+  document.getElementById('progress-count').textContent = (currentQ + 1) + ' of ' + questions.length;
+  document.getElementById('question-text').textContent = q.text;
+  document.getElementById('progress-fill').style.width = (((currentQ + 1) / questions.length) * 100) + '%';
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  const letters = ['A', 'B', 'C', 'D'];
+
+  q.options.forEach(function(opt, i) {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ] === i ? ' selected' : '');
+    btn.innerHTML = '<span class="option-letter">' + letters[i] + '</span><span>' + opt.text + '</span>';
+    btn.onclick = function() { selectOption(i); };
+    grid.appendChild(btn);
+  });
+
+  selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+  document.getElementById('next-btn').classList.toggle('active', selectedOption !== null);
+  document.getElementById('back-btn').disabled = currentQ === 0;
+  document.getElementById('next-btn').textContent = currentQ === questions.length - 1 ? 'See my results →' : 'Next →';
+}
+
+function selectOption(index) {
+  selectedOption = index;
+  answers[currentQ] = index;
+  document.querySelectorAll('.option-btn').forEach(function(btn, i) {
+    btn.classList.toggle('selected', i === index);
+  });
+  document.getElementById('next-btn').classList.add('active');
+}
+
+function nextQuestion() {
+  if (selectedOption === null) return;
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    document.getElementById('question-screen').style.display = 'none';
+    document.getElementById('email-gate').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) {
+    currentQ--;
+    selectedOption = answers[currentQ] !== undefined ? answers[currentQ] : null;
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function calculateResult() {
+  const scores = { anchor: 0, detective: 0, coach: 0, healer: 0 };
+  answers.forEach(function(answerIndex, qIndex) {
+    const type = questions[qIndex].options[answerIndex].type;
+    scores[type]++;
+  });
+  return Object.entries(scores).sort(function(a, b) { return b[1] - a[1]; })[0][0];
+}
+
+async function unlockResults() {
+  const name = document.getElementById('gate-name').value.trim();
+  const email = document.getElementById('gate-email').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email.'); return; }
+
+  const btn = document.querySelector('.unlock-btn');
+  btn.textContent = 'Loading your results...';
+  btn.disabled = true;
+
+  const resultType = calculateResult();
+  const r = results[resultType];
+
+  try {
+    await fetch('https://formspree.io/f/xaqkepyl', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        quiz: 'parent-quiz',
+        result_type: r.name,
+        signature_phrase: r.phrase,
+        source: 'parent-behavior-quiz',
+        tag: 'parent-audience'
+      }),
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+    });
+  } catch(e) { console.log('Form error:', e); }
+
+  showResults(resultType, name);
+}
+
+function showResults(type, name) {
+  document.getElementById('email-gate').style.display = 'none';
+  const screen = document.getElementById('results-screen');
+  screen.style.display = 'block';
+
+  const r = results[type];
+  const firstName = name.split(' ')[0];
+
+  let descParas = r.desc.split('\n\n').map(function(p) {
+    return '<p class="result-desc">' + p + '</p>';
+  }).join('');
+
+  let strengthsList = r.strengths.map(function(s) { return '<li>' + s + '</li>'; }).join('');
+
+  screen.innerHTML =
+    '<div class="result-hero ' + r.key + '">' +
+      '<span class="result-type-label">You are</span>' +
+      '<div class="result-type-name">' + r.name + '</div>' +
+      '<div class="result-type-tagline">' + r.tagline + '</div>' +
+    '</div>' +
+
+    '<div class="result-body">' +
+      '<h2 class="result-section-title">' + firstName + ', here is what this means. ♡</h2>' +
+      descParas +
+
+      '<div class="result-phrase-box">' +
+        '<div class="result-phrase-label">Your signature phrase</div>' +
+        '<div class="result-phrase">"' + r.phrase + '"</div>' +
+      '</div>' +
+
+      '<h3 class="result-section-title" style="margin-top:24px;">Your Parenting Strengths</h3>' +
+      '<ul class="result-strengths">' + strengthsList + '</ul>' +
+
+      '<div class="result-growth">' +
+        '<div class="result-growth-title">Your Growth Edge</div>' +
+        '<p>' + r.growth + '</p>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="result-cta">' +
+      '<div class="result-cta-title">Get the full <em>5 Phrases Guide</em></div>' +
+      '<p class="result-cta-text">' + r.cta_text + ' Check your inbox — your free guide is on its way.</p>' +
+      '<a href="index.html" class="result-cta-btn">Explore Stephanie Listens →</a>' +
+    '</div>' +
+
+    '<div class="share-row">' +
+      '<button class="share-btn share-ig" onclick="copyResult(\'' + r.name + '\', \'' + r.phrase.replace(/'/g, "\\'") + '\')">📱 Share my result</button>' +
+      '<button class="share-btn share-copy" onclick="copyLink()">🔗 Copy quiz link</button>' +
+    '</div>' +
+
+    '<button class="retake-btn" onclick="retake()">Retake the quiz</button>' +
+    '<p class="quiz-signature">Check your inbox for your free guide with all 5 phrases.<br>listening always, -S ♡</p>';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyResult(typeName, phrase) {
+  const text = 'I just took the parent quiz from @stephanielistens and apparently I am ' + typeName + ' ♡\n\nMy signature phrase: "' + phrase + '"\n\nTake yours → stephanielistens.com/parent-quiz';
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Caption copied! Paste it into your Instagram story or post.');
+  });
+}
+
+function copyLink() {
+  navigator.clipboard.writeText('https://stephanielistens.com/parent-quiz').then(function() {
+    alert('Link copied!');
+  });
+}
+
+function retake() {
+  currentQ = 0; answers = []; selectedOption = null;
+  document.getElementById('results-screen').style.display = 'none';
+  document.getElementById('intro-screen').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
