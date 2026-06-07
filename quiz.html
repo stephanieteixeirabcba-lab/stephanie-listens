@@ -980,19 +980,23 @@ async function unlockResults() {
 
   const resultType = calculateResult();
 
-  // Send to Formspree
+  // Add to Brevo via Supabase Edge Function
   try {
-    // Add to Brevo List 3 (Professional subscribers) via Supabase Edge Function
     const supabaseUrl = 'https://edqsobgvltyvoycnafdz.supabase.co/functions/v1/add-to-brevo';
-    await fetch(supabaseUrl, {
+    const response = await fetch(supabaseUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkcXNvYmd2bHR5dm95Y25hZmR6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyNjYzNjcsImV4cCI6MjA5Mzg0MjM2N30.qsiFPkcx1RDyO87Nf-6xWUyqUXJyD3G2yg248f4_8sE'
+      },
       body: JSON.stringify({
         email: email,
         firstName: name,
         listId: 3
       })
     });
+    const data = await response.json();
+    console.log('Brevo response:', response.status, data);
   } catch(e) {
     console.log('Brevo submission error:', e);
   }
