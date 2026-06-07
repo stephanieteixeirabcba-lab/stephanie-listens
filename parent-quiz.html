@@ -108,6 +108,43 @@ body { font-family: var(--sans); background: var(--cream); color: var(--brown); 
 .result-growth-title { font-size: 13px; font-weight: 600; color: var(--peri-dark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
 .result-growth p { font-size: 15px; color: var(--brown); line-height: 1.6; opacity: 0.9; }
 
+.hard-days-box {
+  background: var(--terra-light);
+  border-left: 4px solid var(--terra);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.hard-days-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--terra);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.hard-days-box p {
+  font-size: 15px;
+  color: var(--brown);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+.hard-days-cta {
+  margin-top: 16px !important;
+  padding-top: 16px;
+  border-top: 0.5px solid rgba(212,112,75,0.2);
+}
+.hard-days-link {
+  display: inline-block;
+  color: var(--terra);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--terra);
+  margin-top: 4px;
+}
+
 .result-cta { background: linear-gradient(135deg, var(--terra) 0%, var(--terra-dark) 100%); border-radius: 20px; padding: 32px; text-align: center; margin-bottom: 20px; }
 .result-cta-title { font-family: var(--serif); font-size: 24px; color: var(--white); font-weight: 400; margin-bottom: 10px; line-height: 1.3; }
 .result-cta-title em { font-style: italic; }
@@ -149,7 +186,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--brown); 
     <p class="intro-subtitle">Discover your parenting style under stress — plus the exact phrase that works best for YOUR way of showing up. Take it, share it, save your phrase.</p>
     <div class="stats-row">
       <div class="stat"><span class="stat-num">4</span><span class="stat-label">Parent Types</span></div>
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Questions</span></div>
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label">Questions</span></div>
       <div class="stat"><span class="stat-num">~2 min</span><span class="stat-label">To Results</span></div>
     </div>
     <button class="start-btn" onclick="startQuiz()">Take the quiz →</button>
@@ -162,7 +199,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--brown); 
         <span class="progress-label">Your Progress</span>
         <span class="progress-count" id="progress-count">1 of 7</span>
       </div>
-      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:14.28%"></div></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:12.5%"></div></div>
     </div>
     <div class="question-card">
       <span class="question-num" id="question-num">Question 1 of 7</span>
@@ -237,6 +274,17 @@ const questions = [
       { text: "Done. The boundary is the boundary. We are leaving.", type: "coach" },
       { text: "Soft. They are having such a good time, I get it.", type: "healer" }
     ]
+  },
+  {
+    text: "Be honest. When you are at your absolute limit and behavior is at its worst, you:",
+    options: [
+      { text: "Go quiet and try to hold it together (sometimes it works)", type: "anchor" },
+      { text: "Raise your voice and immediately feel terrible about it", type: "coach" },
+      { text: "Start crying — theirs, yours, or honestly both", type: "healer" },
+      { text: "Replay every mistake in your head after they fall asleep", type: "detective" },
+      { text: "All of the above depending on the day honestly", type: "anchor" }
+    ],
+    honest: true
   },
   {
     text: "When friends ask for advice about their kid's behavior, you say:",
@@ -480,6 +528,16 @@ function showResults(type, name) {
       '<div class="result-growth">' +
         '<div class="result-growth-title">Your Growth Edge</div>' +
         '<p>' + r.growth + '</p>' +
+      '</div>' +
+
+      '<div class="hard-days-box">' +
+        '<div class="hard-days-title">A note about your hard days. ♡</div>' +
+        '<p>Even the strongest ' + r.name + ' loses it sometimes.</p>' +
+        '<p>That is not a failure of your type. That is Tuesday at 6pm.</p>' +
+        '<p>The phrases in your free guide are specifically for those moments — not the days when you are regulated and resourced. For the days when you are not.</p>' +
+        '<p class="hard-days-cta">If the hard days are happening more than the good ones right now — that is not a you problem. That is a support problem.<br><br>' +
+        'I work with a small number of families privately to build strategies that actually fit into real life. Not ideal conditions. Real ones.<br><br>' +
+        '<a href="mailto:hello@stephanielistens.com?subject=COACHING" class="hard-days-link">Email hello@stephanielistens.com with the subject COACHING →</a></p>' +
       '</div>' +
     '</div>' +
 
