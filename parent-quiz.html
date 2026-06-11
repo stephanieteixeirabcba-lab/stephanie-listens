@@ -186,7 +186,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--brown); 
     <p class="intro-subtitle">Discover your parenting style under stress — plus the exact phrase that works best for YOUR way of showing up. Take it, share it, save your phrase.</p>
     <div class="stats-row">
       <div class="stat"><span class="stat-num">4</span><span class="stat-label">Parent Types</span></div>
-      <div class="stat"><span class="stat-num">8</span><span class="stat-label">Questions</span></div>
+      <div class="stat"><span class="stat-num">9</span><span class="stat-label">Questions</span></div>
       <div class="stat"><span class="stat-num">~2 min</span><span class="stat-label">To Results</span></div>
     </div>
     <button class="start-btn" onclick="startQuiz()">Take the quiz →</button>
@@ -199,7 +199,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--brown); 
         <span class="progress-label">Your Progress</span>
         <span class="progress-count" id="progress-count">1 of 7</span>
       </div>
-      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:12.5%"></div></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:11.1%"></div></div>
     </div>
     <div class="question-card">
       <span class="question-num" id="question-num">Question 1 of 7</span>
@@ -242,7 +242,7 @@ const questions = [
   {
     text: "It is 6pm. Your kid is having a meltdown over the wrong color cup. Your first move is:",
     options: [
-      { text: "Take a breath. Stay calm. Sit with them through it.", type: "anchor" },
+      { text: "Take a breath (or several). Try to stay steady even if you do not feel it inside.", type: "anchor" },
       { text: "Ask what is really going on. Tired? Hungry? Overstimulated?", type: "detective" },
       { text: "Get them a different cup, move it along, dinner is ready.", type: "coach" },
       { text: "Hold them close. Their feelings are so big right now.", type: "healer" }
@@ -278,13 +278,22 @@ const questions = [
   {
     text: "Be honest. When you are at your absolute limit and behavior is at its worst, you:",
     options: [
-      { text: "Go quiet and try to hold it together (sometimes it works)", type: "anchor" },
-      { text: "Raise your voice and immediately feel terrible about it", type: "coach" },
-      { text: "Start crying — theirs, yours, or honestly both", type: "healer" },
-      { text: "Replay every mistake in your head after they fall asleep", type: "detective" },
-      { text: "All of the above depending on the day honestly", type: "anchor" }
+      { text: "Go silent on purpose — not calm, just buying time until your nerves settle", type: "anchor" },
+      { text: "Raise your voice more than you wanted to, then feel awful after", type: "coach" },
+      { text: "Cry right along with them — theirs, yours, or honestly both", type: "healer" },
+      { text: "Scream into a pillow or step away to shake it off, then come back", type: "detective" },
+      { text: "Honestly all of the above, depending on the day and how much sleep you got", type: "anchor" }
     ],
     honest: true
+  },
+  {
+    text: "After you have lost it (because it happens to all of us), what usually comes next?",
+    options: [
+      { text: "You go quiet, regroup, and come back when you can think straight", type: "anchor" },
+      { text: "You jump in to fix it and make a plan so it does not happen again", type: "coach" },
+      { text: "You go straight to repair — hugs, apologies, reconnecting", type: "healer" },
+      { text: "You replay it for hours trying to figure out what set it off", type: "detective" }
+    ]
   },
   {
     text: "When friends ask for advice about their kid's behavior, you say:",
