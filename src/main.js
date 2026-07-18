@@ -196,7 +196,7 @@ if (contactForm) {
       }
     } catch (err) {
       console.error(err)
-      contactFormMessage.textContent = 'Something went wrong. Please email hello@stephanielistens.com directly.'
+      contactFormMessage.textContent = 'Something went wrong. Please email stephaniet@stephanielistens.com directly.'
       contactFormMessage.className = 'contact-form-message error'
     } finally {
       contactSubmitBtn.disabled = false
