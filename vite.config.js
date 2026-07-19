@@ -8,7 +8,9 @@ export default defineConfig({
         main: './index.html',
         about: './about.html',
         quiz: './quiz.html',
-        parentQuiz: './parent-quiz.html'
+        parentQuiz: './parent-quiz.html',
+        sessionReset: './session-reset.html',
+        sessionResetKit: './session-reset-kit.html'
       }
     }
   },
