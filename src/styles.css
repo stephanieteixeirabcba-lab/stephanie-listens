@@ -2449,3 +2449,17 @@ body {
   .pq-result-cols { grid-template-columns: 1fr; }
   .pq-form-wrapper { padding: 28px 22px; }
 }
+
+/* ============================================
+   SINGLE-CARD GRID VARIANTS (parent quiz removed)
+   ============================================ */
+
+.quiz-grid-single {
+  grid-template-columns: minmax(0, 520px);
+  justify-content: center;
+}
+
+.dual-magnet-grid-single {
+  grid-template-columns: minmax(0, 520px);
+  justify-content: center;
+}
