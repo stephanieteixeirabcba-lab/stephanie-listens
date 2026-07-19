@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Session Reset Pocket Guide — Stephanie Listens</title>
+  <meta name="description" content="Free guide for BTs and BCBAs: when a session stops working, decide whether to continue, adapt, pause, or contact your supervisor — in under 5 minutes.">
+  <meta property="og:title" content="The Session Reset Pocket Guide">
+  <meta property="og:description" content="When a session is falling apart, do you continue, adapt, pause, or contact your BCBA? A free 5-minute decision guide for BTs and BCBAs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stephanielistens.com/session-reset">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23D4704B'/%3E%3Ctext x='50' y='65' font-family='Georgia,serif' font-size='50' font-style='italic' fill='white' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <!-- MINIMAL NAV -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        stephanie listens <span class="nav-logo-heart">♡</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">← back to home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FREEBIE LANDING -->
+  <section class="reset-hero">
+    <div class="container">
+      <div class="reset-grid">
+
+        <div class="reset-text">
+          <div class="section-eyebrow eyebrow-periwinkle">free · for BTs + BCBAs</div>
+          <h1 class="reset-title">
+            A session is falling apart. Do you <em>continue, adapt, pause, or contact</em> your BCBA?
+          </h1>
+          <p class="reset-intro">
+            The Session Reset Pocket Guide helps BTs slow down and choose an appropriate
+            next step — without guessing, pushing through automatically, or acting beyond your role.
+          </p>
+
+          <p class="reset-inside-label">Inside, you'll get:</p>
+          <ul class="reset-inside">
+            <li><span class="reset-icon">♡</span> A four-option session decision guide</li>
+            <li><span class="reset-icon">♡</span> The condensed LISTEN Reset</li>
+            <li><span class="reset-icon">♡</span> Five questions to ask before continuing</li>
+            <li><span class="reset-icon">♡</span> Observation-versus-interpretation examples</li>
+            <li><span class="reset-icon">♡</span> A clear script for contacting your supervisor</li>
+          </ul>
+
+          <p class="reset-tags">Free. Practical. Built for real sessions.</p>
+        </div>
+
+        <div class="reset-form-wrapper">
+          <form id="reset-form" class="reset-form" novalidate>
+            <h2 class="reset-form-title">Send me the free guide</h2>
+            <p class="reset-form-sub">Get the Pocket Guide in your inbox — read it in 5 minutes.</p>
+
+            <div class="form-group">
+              <label for="reset-first-name">First name</label>
+              <input type="text" id="reset-first-name" name="first-name" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="reset-email">Your email</label>
+              <input type="email" id="reset-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+
+            <button type="submit" class="reset-submit" id="reset-submit-btn">
+              <span class="btn-text">Send me the free guide →</span>
+              <span class="btn-loading">sending...</span>
+            </button>
+
+            <div class="reset-form-message form-message" id="reset-form-message"></div>
+            <p class="reset-form-fine">No spam. Unsubscribe anytime. ♡</p>
+          </form>
+        </div>
+
+      </div>
+
+      <p class="reset-disclaimer">
+        This educational resource does not replace individualized supervision, clinical protocols,
+        crisis procedures, or direction from the responsible behavior analyst.
+      </p>
+    </div>
+  </section>
+
+  <!-- MINIMAL FOOTER -->
+  <footer class="reset-footer">
+    <div class="container">
+      <p>© <span id="reset-year"></span> Stephanie Listens · <a href="index.html">Home</a> · <a href="index.html#contact">Contact</a></p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('reset-year').textContent = new Date().getFullYear();</script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
