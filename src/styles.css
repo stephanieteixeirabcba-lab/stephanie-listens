@@ -2463,3 +2463,44 @@ body {
   grid-template-columns: minmax(0, 520px);
   justify-content: center;
 }
+
+/* ============================================
+   ABOUT — TEACHING / SPEAKING CREDENTIALS
+   ============================================ */
+
+.about-teaching {
+  margin: 24px 0 28px;
+  padding: 20px 24px;
+  background: var(--periwinkle-light);
+  border-left: 3px solid var(--periwinkle);
+  border-radius: 10px;
+}
+
+.about-teaching-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--periwinkle-dark);
+  margin: 0 0 12px;
+}
+
+.about-teaching-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-teaching-list li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink, #4A423E);
+}
+
+.about-teaching-list strong {
+  color: var(--terracotta-dark);
+  font-weight: 600;
+}
