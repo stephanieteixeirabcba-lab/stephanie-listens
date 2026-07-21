@@ -9,7 +9,8 @@ export default defineConfig({
         about: './about.html',
         quiz: './quiz.html',
         sessionReset: './session-reset.html',
-        sessionResetKit: './session-reset-kit.html'
+        sessionResetKit: './session-reset-kit.html',
+        teaching: './teaching.html'
       }
     }
   },
