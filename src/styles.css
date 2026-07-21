@@ -2504,3 +2504,270 @@ body {
   color: var(--terracotta-dark);
   font-weight: 600;
 }
+
+/* ============================================
+   TEACHING & SPEAKING PAGE
+   ============================================ */
+
+.teach-hero {
+  padding: 90px 0 70px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+  text-align: center;
+}
+.teach-hero-inner { max-width: 760px; margin: 0 auto; }
+.teach-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.12;
+  color: var(--ink, #3A3330);
+  margin: 14px 0 22px;
+}
+.teach-hero-title em { font-style: italic; color: var(--terracotta); }
+.teach-hero-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink, #4A423E);
+  margin-bottom: 30px;
+}
+.teach-hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.teach-section { padding: 80px 0; }
+.teach-section-alt { background: var(--cream-warm); }
+
+/* Talks */
+.teach-talks {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.teach-talk {
+  display: flex;
+  gap: 28px;
+  background: var(--white, #fff);
+  border: 1px solid var(--terracotta-light);
+  border-radius: 18px;
+  padding: 28px 32px;
+  align-items: flex-start;
+}
+.teach-talk-year {
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white, #fff);
+  background: var(--periwinkle);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-top: 4px;
+}
+.teach-talk-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--terracotta-dark);
+  margin: 0 0 6px;
+}
+.teach-talk-meta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--periwinkle-dark);
+  margin: 0 0 10px;
+}
+.teach-talk-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink, #5A524E);
+  margin: 0;
+}
+
+/* CEUs */
+.teach-ceus { padding: 80px 0; background: var(--cream); }
+.teach-ceu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 940px;
+  margin: 0 auto;
+  align-items: start;
+}
+.teach-ceu-feature {
+  background: var(--periwinkle-light);
+  border: 1px solid var(--periwinkle);
+  border-radius: 20px;
+  padding: 36px 34px;
+}
+.teach-ceu-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--periwinkle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.teach-ceu-feature h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--periwinkle-dark);
+  margin: 0 0 18px;
+}
+.teach-ceu-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.teach-ceu-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink, #3A3330);
+}
+.teach-ceu-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--white, #fff);
+  background: var(--periwinkle);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+/* CEU signup card */
+.teach-ceu-signup {
+  background: var(--white, #fff);
+  border-radius: 20px;
+  padding: 36px 34px;
+  box-shadow: 0 16px 44px rgba(178, 93, 61, 0.14);
+  border: 1px solid var(--terracotta-light);
+}
+.teach-ceu-signup-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--terracotta);
+  margin: 0 0 6px;
+}
+.teach-ceu-signup-sub { font-size: 0.98rem; color: var(--ink, #5A524E); margin: 0 0 22px; line-height: 1.5; }
+.teach-ceu-form .form-group { margin-bottom: 16px; display: flex; flex-direction: column; }
+.teach-ceu-form label { font-size: 0.9rem; font-weight: 600; color: var(--terracotta-dark); margin-bottom: 8px; }
+.teach-ceu-form input,
+.teach-ceu-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #E5DDD3;
+  border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--ink, #3A3330);
+  background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.teach-ceu-form input:focus,
+.teach-ceu-form select:focus { outline: none; border-color: var(--terracotta); box-shadow: 0 0 0 3px var(--terracotta-light); }
+.teach-ceu-form input::placeholder { color: #A89E94; }
+.teach-ceu-btn { width: 100%; font-size: 15px; margin-top: 4px; }
+.teach-ceu-btn .btn-loading { display: none; }
+.teach-ceu-btn.loading .btn-text { display: none; }
+.teach-ceu-btn.loading .btn-loading { display: inline; }
+.teach-ceu-message { font-size: 0.9rem; font-weight: 500; min-height: 18px; padding: 8px 0 0; text-align: center; }
+.teach-ceu-message.success { color: var(--terracotta); }
+.teach-ceu-message.error { color: #C0392B; }
+.teach-ceu-fine { font-size: 0.82rem; color: #A89E94; text-align: center; margin: 10px 0 0; }
+
+/* Topics */
+.teach-topics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.teach-topic {
+  background: var(--white, #fff);
+  border: 1px solid var(--terracotta-light);
+  border-radius: 16px;
+  padding: 26px 28px;
+}
+.teach-topic h3 {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--terracotta-dark);
+  margin: 0 0 10px;
+}
+.teach-topic p { margin: 0; font-size: 0.96rem; line-height: 1.55; color: var(--ink, #5A524E); }
+.teach-topics-note {
+  text-align: center;
+  margin: 34px auto 0;
+  font-size: 0.98rem;
+  color: var(--ink, #5A524E);
+}
+.teach-topics-note a { color: var(--terracotta); text-decoration: none; font-weight: 500; }
+.teach-topics-note a:hover { text-decoration: underline; }
+
+/* Invite */
+.teach-invite { padding: 90px 0; background: var(--cream); }
+.teach-invite-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--periwinkle-light);
+  border: 1px solid var(--periwinkle);
+  border-radius: 24px;
+  padding: 48px 44px;
+  text-align: center;
+}
+.teach-invite-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  color: var(--terracotta);
+  margin: 10px 0 16px;
+}
+.teach-invite-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink, #4A423E);
+  margin: 0 auto 28px;
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .teach-section, .teach-ceus, .teach-invite { padding: 56px 0; }
+  .teach-ceu-grid { grid-template-columns: 1fr; }
+  .teach-topics { grid-template-columns: 1fr; }
+  .teach-talk { flex-direction: column; gap: 14px; }
+  .teach-ceu-feature, .teach-ceu-signup, .teach-invite-card { padding: 28px 24px; }
+}
+
+/* CEU approved-provider logos on teaching page */
+.teach-ceu-logos {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--periwinkle);
+}
+.teach-ceu-logos-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--periwinkle-dark);
+  margin-bottom: 12px;
+}
+.teach-ceu-logos-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.teach-ceu-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
