@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /downloads/
-
-Sitemap: https://stephanielistens.com/sitemap.xml
