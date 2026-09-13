@@ -3,28 +3,37 @@
      The five pastels are SURFACES (cards, section bands, badges).
      --accent is reserved for buttons and CTAs ONLY. */
 
-  --tint-blue:   #BEDAE3;
+  /* NOTE ON NAMES: --terracotta and --periwinkle are historical variable names
+     and no longer describe their values. --terracotta is now the PERIWINKLE
+     family (primary: links, headline emphasis, nav) and --periwinkle is now the
+     ROSE family (accent: eyebrows, hearts, secondary CTAs). The names are kept
+     so ~90 existing rules and the .eyebrow-* / .bg-* / .link-* utility classes
+     in the HTML keep working. Rename both families together later if you want. */
+
+  --tint-blue:   #C9CDF0;
   --tint-mint:   #C4E9DA;
-  --tint-blush:  #FED5CF;
-  --tint-peach:  #F1B598;
+  --tint-blush:  #F7CBDD;
+  --tint-peach:  #E8C4D6;
   --tint-lilac:  #D3C7E6;
 
-  --accent: #E07A4E;
-  --accent-dark: #C9633A;
-  --accent-tint: #FDEDE3;
-  --on-accent: #1E3138;
+  --accent: #5B5FC7;
+  --accent-dark: #4A4EB0;
+  --accent-tint: #EDEEFC;
+  --on-accent: #FFFFFF;
 
-  --terracotta: #2E6B7E;
-  --terracotta-light: #E7F1F5;
-  --terracotta-dark: #1F4E5C;
+  /* PERIWINKLE — primary */
+  --terracotta: #5B5FC7;
+  --terracotta-light: #EDEEFC;
+  --terracotta-dark: #4A4EB0;
 
-  --periwinkle: #B8685E;
-  --periwinkle-light: #FEE9E5;
-  --periwinkle-dark: #96504A;
-  --periwinkle-50: #FFF7F5;
+  /* ROSE — accent */
+  --periwinkle: #B4487A;
+  --periwinkle-light: #FDEAF1;
+  --periwinkle-dark: #963A64;
+  --periwinkle-50: #FFF7FA;
 
   --cream: #FBFAF8;
-  --cream-warm: #FEF0EC;
+  --cream-warm: #FAF7FD;
 
   --warm-brown: #1E3138;
   --warm-brown-light: #35474E;
@@ -2927,4 +2936,80 @@ body {
 @media (max-width: 600px) {
   .approval-logos { gap: 1.75rem; padding: 1.5rem 1rem; }
   .approval-logo { height: 72px; }
+}
+
+/* ─── ACE COMPLIANCE BLOCKS (added Sept 2026) ───────────────────────
+   Supports the course-detail markup on ceus.html. The handbook requires
+   provider name, instructor expertise, learning objectives, disclosures,
+   and publication date in the public course description. */
+
+.ceu-meta {
+  font-size: 0.8125rem;
+  color: var(--warm-brown-light);
+  margin-bottom: 0.75rem;
+}
+
+.ceu-details {
+  margin: 1rem 0 1.25rem;
+  border-top: 1px solid var(--terracotta-light);
+  padding-top: 0.85rem;
+}
+.ceu-details summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  list-style: none;
+}
+.ceu-details summary::-webkit-details-marker { display: none; }
+.ceu-details summary::after { content: ' +'; }
+.ceu-details[open] summary::after { content: ' –'; }
+.ceu-details summary:hover { color: var(--periwinkle-dark); }
+.ceu-details summary:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 3px;
+}
+
+.ceu-details-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--warm-brown);
+  margin: 1rem 0 0.35rem;
+}
+.ceu-details p { font-size: 0.9375rem; }
+
+.ceu-objectives {
+  margin: 0 0 0.5rem 1.1rem;
+  font-size: 0.9375rem;
+}
+.ceu-objectives li { margin-bottom: 0.4rem; }
+
+.ceu-honest-fine {
+  font-size: 0.875rem;
+  color: var(--warm-brown-light);
+  margin-top: 0.85rem;
+}
+
+.approval-disclaimer {
+  max-width: 620px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--warm-brown-light);
+}
+
+/* Three logos instead of two — cap height so a wide BACB lockup
+   can't visually outweigh the two square marks. */
+.approval-logos { flex-wrap: wrap; }
+.approval-logo, .credential-logo { max-height: 64px; width: auto; }
+@media (max-width: 600px) {
+  .approval-logo, .credential-logo { max-height: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
